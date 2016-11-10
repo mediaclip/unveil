@@ -166,6 +166,17 @@
     &nbsp;&nbsp;<span class="red">"http://my-server/my-image.png"</span><br>
     );</code>
 
+    <h2>Set image as background</h2>
+    <p>When image is loaded, the source is set as background-image</p>
+    <p>In this example <code>background-image: url(http://my-server/my-image.png)</code></p>
+    <code>$(<span class="red">"img"</span>).unveil(<br>
+        &nbsp;&nbsp;<span class="purple">200</span>,<br>
+        &nbsp;&nbsp;null,<br>
+        &nbsp;&nbsp;null,<br>
+        &nbsp;&nbsp;<span class="red">"http://my-server/my-image.png"</span><br>
+        &nbsp;&nbsp;<span class="blue">true</span><br>
+        );</code>
+
     <h2>Trigger</h2>
     <p>You can still trigger image loading whenever you need.</p>
     <p>All you have to do is select the images you want to "unveil" and trigger the event:</p>

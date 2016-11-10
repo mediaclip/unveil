@@ -10,7 +10,7 @@
 
 ;(function($) {
 
-  $.fn.unveil = function(threshold, callback, target, url) {
+  $.fn.unveil = function(threshold, callback, target, url, asBackground) {
 
     var $w = $(window),
 		trg = target || $w,
@@ -24,7 +24,11 @@
       var source = url || this.getAttribute(attrib);
       source = source || this.getAttribute("data-src");
       if (source) {
-        this.setAttribute("src", source);
+        if (asBackground === true) {
+          this.style.backgroundImage = "url(" + source + ")";
+        } else {
+          this.setAttribute("src", source);
+        }
         if (typeof callback === "function") callback.call(this);
       }
     });
